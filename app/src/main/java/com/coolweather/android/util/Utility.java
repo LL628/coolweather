@@ -80,13 +80,12 @@ public class Utility {
     }
 
     public static Weather handleWeatherResponse(String response){
-        try {
+        try{
             JSONObject jsonObject = new JSONObject(response);
             JSONArray jsonArray = jsonObject.getJSONArray("HeWeather");
             String weatherContent = jsonArray.getJSONObject(0).toString();
-            return new Gson().fromJson(weatherContent,Weather.class);
-
-        } catch (Exception e) {
+            return new Gson().fromJson(weatherContent, Weather.class);  // 将JSON数据解析成Weather对象
+        }catch (Exception e){
             e.printStackTrace();
         }
         return null;

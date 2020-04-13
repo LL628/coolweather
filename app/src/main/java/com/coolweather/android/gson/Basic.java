@@ -8,10 +8,10 @@ public class Basic {
 
     @SerializedName("id")
     public String weatherId;
-    public String update;
+    public Update update;
 
     public class Update{
-        @SerializedName("update")
+        @SerializedName("loc")
         public String updateTime;
     }
 }
